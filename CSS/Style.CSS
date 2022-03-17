@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=roboto:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: black;
+}
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 30px 0;
+  font-family: sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a {
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.navbar .logo a span {
+  color: blue;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar .menu li a:hover {
+  color: blue;
+}
+
+.home {
+  display: flex;
+  height: 50vh;
+  color: white;
+  min-width: 500px;
+  font-family: sans-serif;
+}
+
+.home .max-width {
+  margin: auto 0 auto 40px;
+}
+
+.home .home-content .text-1 {
+  font-size: 27px;
+}
+
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 500;
+  margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+  color: blue;
+  font-weight: 500;
+}
+
+.Meu-Perfil {
+  color: white;
+  height: 50vh;
+  margin-left: 100px;
+}
+
+.Meu-Perfil h1 {
+  font-size: 70px;
+  margin-left: 100px;
+}
+
+.Meu-Perfil p {
+  width: 600px;
+  font-size: 30px;
+  line-height: 1.8;
+  text-align: justify;
+  color: white;
+  margin-left: 100px;
+}
+
+.Meus-Projetos {
+  color: white;
+  height: 50vh;
+  border-radius: 4px;
+  font-family: sans-serif;
+  align-content: center;
+  font-size: 30px;
+}
+
+.Meus-Projetos h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.Meus-Projetos h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  width: 9.7ch;
+}
+
+.Meus-Projetos .Meus-Projetos-01 {
+  background-color: white;
+  width: 350px;
+  height: 130px;
+  margin: 10px auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 60px;
+  border-radius: 4px;
+  border: 2px solid;
+  align-content: center;
+  justify-content: center;
+}
+
+.Meus-Projetos .Meus-Projetos-02 {
+  background-color: white;
+  width: 350px;
+  height: 130px;
+  margin: 10px auto;
+  display: inline-flex;
+  font-size: 35px;
+  flex-wrap: wrap;
+  margin-left: 60px;
+  border-radius: 4px;
+  border: 2px solid;
+  align-content: center;
+  justify-content: center;
+}
+
+footer {
+  color: white;
+  border-radius: 4px;
+  font-family: sans-serif;
+  height: 17vh;
+}
+
+footer h5 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.instagram {
+  background-color: black;
+  width: 230px;
+  height: 80px;
+  margin: 10px auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 160px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  border: 5px solid;
+  border-image: linear-gradient(227.91deg,rgb(14, 14, 117) 0%,rgb(55, 31, 94) 100%)1;
+}
+
+.github {
+  background-color: black;
+  width: 230px;
+  height: 80px;
+  margin: 10px auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 160px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  border: 5px solid;
+  border-image: linear-gradient(227.91deg,rgb(14, 14, 117) 0%,rgb(55, 31, 94) 100%)1;
+}
+
+.img-instagram {
+  width: 45px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.img-github {
+  width: 45px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: 60px;
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  line-height: 0.5;
+}
+
+.email {
+  font-size: 30px;
+  font-weight: 200;
+  background-color: black;
+  width: 280px;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  border-radius: 12px;
+}
+
+.assinatura {
+  display: flex;
+  justify-content: end;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
