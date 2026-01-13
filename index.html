@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>John Lennon Moreira - Desenvolvedor Web</title>
-    <meta name="description" content="Portfólio de John Lennon Moreira - Desenvolvedor Web especializado em HTML, CSS, JavaScript e React">
-    <meta name="keywords" content="desenvolvedor web, web developer, HTML, CSS, JavaScript, React, portfolio">
+    <meta name="description" content="Portfólio de John Lennon Moreira - Desenvolvedor Web especializado em HTML, CSS, JavaScript, React, Node.js, TypeScript e PHP">
+    <meta name="keywords" content="desenvolvedor web, web developer, HTML, CSS, JavaScript, React, Node.js, TypeScript, PHP, MongoDB, portfolio, full-stack">
     <meta name="author" content="John Lennon Moreira">
     <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
     <link rel="canonical" href="https://zjohnys.github.io/Portfolio/">
@@ -82,7 +83,7 @@
               Sou John Lennon Moreira, <strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong>, com experiência em <strong>suporte técnico</strong> e <strong>monitoria em informática</strong>. Minha formação inclui <strong>programação web</strong> e <strong>desenvolvimento de software</strong>, adquiridos no <strong>Centro Universitário Paraíso - UniFAP</strong>. Possuo domínio pleno em <strong>português</strong> e nível intermediário em <strong>inglês</strong> e <strong>espanhol</strong>.
             </p>
             <p>
-              Destaco-me pela <strong>boa comunicação</strong> com clientes e equipes, iniciativa para <strong>aprendizagem contínua</strong> e agilidade na <strong>resolução de problemas</strong>. Tenho atenção aos detalhes e comprometimento com <strong>normas de segurança e qualidade</strong>. Sou proficiente em <strong>metodologias ágeis</strong>, <strong>UX design</strong>, <strong>lógica de programação</strong> e versionamento de código com <strong>Git e GitHub</strong>. Além disso, participei de diversas imersões em <strong>Front-End</strong> e <strong>Back-End</strong>, que aprimoraram minhas habilidades técnicas, e sou capaz de gerenciar meu tempo para cumprir prazos e demandas diárias com <strong>organização e eficiência</strong>.
+              Tenho experiência prática em desenvolvimento full-stack, utilizando tecnologias como <strong>HTML5, CSS3, JavaScript, React, Node.js, TypeScript, PHP e MongoDB</strong>. Recentemente, desenvolvi aplicações como um sistema de autenticação completo com login social (Google, Facebook, Apple) e projetos educacionais focados em acessibilidade. Sou apaixonado por criar soluções inovadoras e estou sempre aprendendo novas tecnologias para entregar produtos de alta qualidade.
             </p>
             <div class="sobre-buttons">
               <a href="Curriculo/John_Moreira_Currículo.pdf" class="btn-secondary" download>Baixar CV</a>
@@ -107,33 +108,67 @@
             </p>
           </div>
           <div class="column right">
-            <div class="bars">
-              <div class="info">
-                <span>HTML</span>
-                <span>90%</span>
+            <div class="skill-category">
+              <h3>Frontend</h3>
+              <div class="bars">
+                <div class="info">
+                  <i class="fab fa-html5"></i>
+                  <span>HTML</span>
+                  <span>90%</span>
+                </div>
+                <div class="line html"></div>
               </div>
-              <div class="line html"></div>
+              <div class="bars">
+                <div class="info">
+                  <i class="fab fa-css3-alt"></i>
+                  <span>CSS</span>
+                  <span>85%</span>
+                </div>
+                <div class="line css"></div>
+              </div>
+              <div class="bars">
+                <div class="info">
+                  <i class="fab fa-js-square"></i>
+                  <span>JavaScript</span>
+                  <span>80%</span>
+                </div>
+                <div class="line js"></div>
+              </div>
+              <div class="bars">
+                <div class="info">
+                  <i class="fab fa-react"></i>
+                  <span>React</span>
+                  <span>70%</span>
+                </div>
+                <div class="line react"></div>
+              </div>
             </div>
-            <div class="bars">
-              <div class="info">
-                <span>CSS</span>
-                <span>85%</span>
+            <div class="skill-category">
+              <h3>Backend</h3>
+              <div class="bars">
+                <div class="info">
+                  <i class="fab fa-node-js"></i>
+                  <span>Node.js</span>
+                  <span>65%</span>
+                </div>
+                <div class="line nodejs"></div>
               </div>
-              <div class="line css"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span>JavaScript</span>
-                <span>80%</span>
+              <div class="bars">
+                <div class="info">
+                  <i class="fas fa-code"></i>
+                  <span>TypeScript</span>
+                  <span>60%</span>
+                </div>
+                <div class="line typescript"></div>
               </div>
-              <div class="line js"></div>
-            </div>
-            <div class="bars">
-              <div class="info">
-                <span>React</span>
-                <span>70%</span>
+              <div class="bars">
+                <div class="info">
+                  <i class="fab fa-php"></i>
+                  <span>PHP</span>
+                  <span>55%</span>
+                </div>
+                <div class="line php"></div>
               </div>
-              <div class="line react"></div>
             </div>
           </div>
         </div>
@@ -179,16 +214,17 @@
           </div>
           <div class="card">
             <div class="box">
-              <div class="icon">⚡</div>
-              <div class="text">Em Desenvolvimento</div>
-              <p>Novos projetos incríveis estão sendo criados. Aplicações web modernas com React, Node.js e MongoDB.</p>
+              <div class="icon">🔐</div>
+              <div class="text">Login React App</div>
+              <p>Aplicativo de autenticação full-stack desenvolvido com React, Node.js e MongoDB. Inclui registro, login, recuperação de senha e autenticação social via Google, Facebook e Apple.</p>
               <div class="tech-stack">
                 <span>React</span>
                 <span>Node.js</span>
                 <span>MongoDB</span>
+                <span>Tailwind CSS</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/Zjohnys" target="_blank" rel="noopener" class="project-link">🐙 GitHub</a>
+                <a href="https://github.com/Zjohnys/Login-React" target="_blank" rel="noopener" class="project-link">💻 Código</a>
               </div>
             </div>
           </div>
@@ -232,19 +268,19 @@
           <div class="column right">
             <div class="social-links">
               <a href="https://www.instagram.com/john_lmoreira/" class="social-card instagram" target="_blank" rel="noopener">
-                <img src="https://i.ibb.co/tQmCNY4/instagram.png" alt="Instagram" loading="lazy">
+                <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
               </a>
               <a href="https://github.com/Zjohnys" class="social-card github" target="_blank" rel="noopener">
-                <img src="https://i.ibb.co/bWWW7mF/github.png" alt="GitHub" loading="lazy">
+                <i class="fab fa-github"></i>
                 <span>GitHub</span>
               </a>
               <a href="https://www.linkedin.com/in/john-lennon-moreira-964389227/" class="social-card linkedin" target="_blank" rel="noopener">
-                <img src="https://i.ibb.co/6YW2n6v/linkedin.png" alt="LinkedIn" loading="lazy">
+                <i class="fab fa-linkedin-in"></i>
                 <span>LinkedIn</span>
               </a>
               <a href="mailto:johnmoreira42@gmail.com" class="social-card email">
-                <span>📧</span>
+                <i class="fas fa-envelope"></i>
                 <span>Email</span>
               </a>
             </div>
@@ -256,8 +292,13 @@
 
     <!-- Footer -->
     <footer>
-      <span>Criado por <a href="#home">John Lennon Moreira</a> | <span class="far fa-copyright"></span> 2025 Todos os direitos reservados.</span>
+      <span>Criado por <a href="#home">John Lennon Moreira</a> | <span class="far fa-copyright"></span> 2026 Todos os direitos reservados.</span>
     </footer>
+
+    <!-- Botão voltar ao topo -->
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+      <span>↑</span>
+    </button>
 
     <script src="src/js/script.js"></script>
   </body>

@@ -414,28 +414,55 @@ body {
   color: var(--text-secondary);
 }
 
+.skills .skills-content .right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.skill-category {
+  flex: 1;
+}
+
+.skill-category h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .skills .skills-content .right .bars {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .skills .skills-content .right .info {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   align-items: center;
   justify-content: space-between;
 }
 
+.skills .skills-content .right .info i {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
 .skills .skills-content .right span {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .skills .skills-content .right .line {
-  height: 6px;
+  height: 8px;
   width: 100%;
   background: var(--border-color);
   position: relative;
-  border-radius: 3px;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .skills .skills-content .right .line::before {
@@ -445,8 +472,9 @@ body {
   left: 0;
   top: 0;
   background: var(--gradient-primary);
-  border-radius: 3px;
-  transition: var(--transition);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1.5s ease-out;
 }
 
 .skills .skills-content .right .html::before {
@@ -463,6 +491,18 @@ body {
 
 .skills .skills-content .right .react::before {
   width: 70%;
+}
+
+.skills .skills-content .right .nodejs::before {
+  width: 65%;
+}
+
+.skills .skills-content .right .typescript::before {
+  width: 60%;
+}
+
+.skills .skills-content .right .php::before {
+  width: 55%;
 }
 
 /* Seção Projetos */
@@ -485,17 +525,36 @@ body {
 .projetos .projetos-content .card {
   background: var(--bg-card);
   text-align: center;
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 50px 25px;
   cursor: pointer;
   transition: var(--transition);
   border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.projetos .projetos-content .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.projetos .projetos-content .card:hover::before {
+  left: 100%;
 }
 
 .projetos .projetos-content .card:hover {
   background: var(--bg-dark);
-  transform: scale(1.05);
+  transform: translateY(-10px) scale(1.02);
   border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
 }
 
 .projetos .projetos-content .card .box {
@@ -544,21 +603,39 @@ body {
 }
 
 .project-link {
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 10px 18px;
+  border-radius: 25px;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   transition: var(--transition);
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   color: var(--primary-color);
   background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+.project-link:hover::before {
+  left: 0;
 }
 
 .project-link:hover {
-  background: var(--primary-color);
   color: var(--text-color);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
 }
 
 .project-link.disabled {
@@ -662,10 +739,10 @@ body {
   box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
 }
 
-.social-card img {
-  width: 30px;
-  height: 30px;
+.social-card i {
+  font-size: 30px;
   margin-right: 15px;
+  color: var(--primary-color);
 }
 
 .social-card span {
@@ -925,7 +1002,61 @@ footer span a:hover {
     object-fit: cover;
     object-position: center top;
   }
-  .title {
-    font-size: 35px;
+/* Animações de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home .home-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.sobre .sobre-content {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.skills .skills-content {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.projetos .projetos-content {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.contato .contato-content {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+/* Efeitos de hover adicionais */
+.navbar .logo a:hover {
+  transform: scale(1.05);
+}
+
+.tech-stack span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Responsividade adicional para mobile */
+@media (max-width: 768px) {
+  .skills .skills-content .right {
+    gap: 30px;
+  }
+  .skill-category h3 {
+    font-size: 18px;
+  }
+  .skills .skills-content .right .info i {
+    font-size: 20px;
+  }
+  .skills .skills-content .right span {
+    font-size: 14px;
+  }
+}
 }

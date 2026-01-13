@@ -394,6 +394,38 @@ scrollTopBtn.addEventListener('mouseleave', () => {
   scrollTopBtn.style.transform = 'scale(1)';
 });
 
+// Animação das barras de progresso
+const skillsSection = document.querySelector('.skills');
+let skillsAnimated = false;
+
+function animateSkills() {
+  if (skillsAnimated) return;
+  
+  const skillLines = document.querySelectorAll('.skills .line');
+  skillLines.forEach((line, index) => {
+    setTimeout(() => {
+      line.style.opacity = '1';
+    }, index * 200);
+  });
+  
+  skillsAnimated = true;
+}
+
+function checkSkillsVisibility() {
+  if (!skillsSection) return;
+  
+  const rect = skillsSection.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  
+  if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+    animateSkills();
+  }
+}
+
+// Verificar visibilidade das skills no scroll e load
+window.addEventListener('scroll', checkSkillsVisibility);
+window.addEventListener('load', checkSkillsVisibility);
+
 // Adicionar variáveis CSS ao JavaScript
 document.documentElement.style.setProperty('--gradient-primary', 'linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)');
 
