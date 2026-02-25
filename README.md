@@ -128,9 +128,28 @@ VITE_API_URL=http://localhost:3001/api
 
 ## 🚀 Deploy
 
-### Deploy no Vercel (Recomendado)
+### Deploy no GitHub Pages (Automático) ⭐
 
-Este projeto está otimizado para deploy no Vercel:
+O projeto está configurado para deploy automático no GitHub Pages:
+
+1. **Habilite o GitHub Pages:**
+   - Vá para: Settings → Pages
+   - Em "Source", selecione "GitHub Actions"
+
+2. **Deploy Automático:**
+   - Cada push para a branch `main` dispara o workflow automaticamente
+   - O site será publicado em: `https://Zjohnys.github.io/Portfolio/`
+   - Aguarde 2-3 minutos para o primeiro deploy
+
+3. **Acompanhe o Deploy:**
+   - Vá para a aba "Actions" no GitHub
+   - Veja o progresso do workflow "Deploy to GitHub Pages"
+
+✨ **URL do seu portfólio:** https://Zjohnys.github.io/Portfolio/
+
+### Deploy no Vercel (Alternativa)
+
+Este projeto também está otimizado para deploy no Vercel:
 
 1. **Conecte seu repositório GitHub ao Vercel:**
    - Acesse [vercel.com](https://vercel.com)
@@ -206,7 +225,7 @@ Este projeto está disponível sob a licença MIT.
 1. Customize os dados pessoais em cada componente
 2. Adicione suas redes sociais nos links
 3. Configure o email para receber contatos
-4. ✨ **Deploy no Vercel**: Processo automático e gratuito
+4. 🌐 **Deploy automático no GitHub Pages**: Faça push e seu site estará online!
 5. Adicione seus projetos e habilidades
 
 ## 📞 Suporte
@@ -214,6 +233,14 @@ Este projeto está disponível sob a licença MIT.
 Para dúvidas ou problemas, abra uma issue no repositório.
 
 ## 📝 Changelog
+
+### v1.0.3 (25 de fevereiro de 2026) - GitHub Pages Deploy
+- 🌐 Configurado deploy automático no GitHub Pages
+- 📄 Criado workflow `.github/workflows/deploy.yml` para CI/CD
+- ⚙️ Atualizado `vite.config.ts` com base URL para GitHub Pages
+- 🚫 Adicionado `.nojekyll` para evitar processamento Jekyll
+- 📚 Atualizado README com instruções completas de deploy
+- 🎯 Portfólio online em: https://Zjohnys.github.io/Portfolio/
 
 ### v1.0.2 (25 de fevereiro de 2026) - Otimização para Vercel
 - 🚀 Adicionado `vercel.json` com configuração automática de deploy
