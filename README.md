@@ -2,6 +2,11 @@
 
 Um portfólio impressionante e responsivo construído com as tecnologias mais modernas, apresentando animações fluidas e design minimalista.
 
+## 🌐 Deploy Online
+
+- **Vercel (Principal)**: [https://portfolio-john-moreira.vercel.app](https://portfolio-john-moreira.vercel.app)
+- **GitHub Pages**: [https://Zjohnys.github.io/Portfolio/](https://Zjohnys.github.io/Portfolio/)
+
 ## 🚀 Características
 
 - **React 18** com TypeScript para type safety
@@ -147,26 +152,28 @@ O projeto está configurado para deploy automático no GitHub Pages:
 
 ✨ **URL do seu portfólio:** https://Zjohnys.github.io/Portfolio/
 
-### Deploy no Vercel (Alternativa)
+### Deploy no Vercel ⭐ (DEPLOYADO)
 
-Este projeto também está otimizado para deploy no Vercel:
+✅ **Projeto já está online no Vercel!**  
+🌐 **URL:** [https://portfolio-john-moreira.vercel.app](https://portfolio-john-moreira.vercel.app)
 
-1. **Conecte seu repositório GitHub ao Vercel:**
-   - Acesse [vercel.com](https://vercel.com)
-   - Clique em "New Project"
-   - Importe seu repositório GitHub
+**Configuração:**
+- Deploy automático conectado ao repositório GitHub
+- Cada push na branch `main` atualiza automaticamente
+- Build e deployment gerenciados pelo Vercel
+- Configuração via `vercel.json` já aplicada
 
-2. **Configuração automática:**
-   - O Vercel detectará automaticamente as configurações do `vercel.json`
-   - Não é necessário configurar manualmente
+**Para fazer deploy manual via CLI:**
+```bash
+npm install -g vercel
+vercel login
+vercel --prod
+```
 
-3. **Deploy:**
-   - Clique em "Deploy"
-   - O Vercel fará build e deploy automaticamente
-
-4. **Variáveis de ambiente (se necessário):**
-   - No painel do Vercel > Settings > Environment Variables
-   - Adicione `VITE_API_URL` se estiver usando backend externo
+**Para configurar manualmente (não necessário, já está configurado):**
+1. Acesse [vercel.com](https://vercel.com)
+2. Conecte ao repositório GitHub
+3. Configure conforme necessário
 
 ### Build Local para Produção
 
@@ -233,6 +240,15 @@ Este projeto está disponível sob a licença MIT.
 Para dúvidas ou problemas, abra uma issue no repositório.
 
 ## 📝 Changelog
+
+### v1.0.4 (25 de fevereiro de 2026) - Deploy Vercel Completo ⭐
+- 🚀 **Deploy realizado no Vercel**: https://portfolio-john-moreira.vercel.app
+- 🔄 Deploy automático conectado ao repositório GitHub
+- ⚙️ Configuração inteligente de base URL (detecta Vercel vs GitHub Pages)
+- 📝 Atualizado `vercel.json` com configurações otimizadas
+- 🔗 Conectado Vercel CLI ao projeto
+- 📚 README atualizado com ambos os deploys (Vercel e GitHub Pages)
+- 🎯 Portfólio acessível em duas URLs diferentes
 
 ### v1.0.3 (25 de fevereiro de 2026) - GitHub Pages Deploy
 - 🌐 Configurado deploy automático no GitHub Pages
