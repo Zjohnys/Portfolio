@@ -24,12 +24,15 @@ Projeto Portfolio/
 │   │   ├── App.tsx
 │   │   └── main.tsx
 │   ├── public/
+│   │   └── j-icon.svg     # Ícone personalizado
 │   ├── index.html
 │   └── package.json
-├── backend/               # Node.js + Express
+├── backend/               # Node.js + Express (deploy separado)
 │   ├── src/
 │   │   └── server.ts
 │   └── package.json
+├── vercel.json           # Configuração do Vercel
+├── .gitignore
 └── README.md
 ```
 
@@ -123,20 +126,37 @@ VITE_API_URL=http://localhost:3001/api
    - Atualize as variáveis de email em .env
    - Configure o transporter em `backend/src/server.ts`
 
-## 🚀 Build para Produção
+## 🚀 Deploy
 
-### Frontend
+### Deploy no Vercel (Recomendado)
+
+Este projeto está otimizado para deploy no Vercel:
+
+1. **Conecte seu repositório GitHub ao Vercel:**
+   - Acesse [vercel.com](https://vercel.com)
+   - Clique em "New Project"
+   - Importe seu repositório GitHub
+
+2. **Configuração automática:**
+   - O Vercel detectará automaticamente as configurações do `vercel.json`
+   - Não é necessário configurar manualmente
+
+3. **Deploy:**
+   - Clique em "Deploy"
+   - O Vercel fará build e deploy automaticamente
+
+4. **Variáveis de ambiente (se necessário):**
+   - No painel do Vercel > Settings > Environment Variables
+   - Adicione `VITE_API_URL` se estiver usando backend externo
+
+### Build Local para Produção
+
 ```bash
 cd frontend
 npm run build
 ```
 
-### Backend
-```bash
-cd backend
-npm run build
-npm start
-```
+O build será gerado em `frontend/dist/`
 
 ## 🎯 API Endpoints
 
@@ -186,12 +206,26 @@ Este projeto está disponível sob a licença MIT.
 1. Customize os dados pessoais em cada componente
 2. Adicione suas redes sociais nos links
 3. Configure o email para receber contatos
-4. Faça deploy no Vercel (frontend) e Heroku (backend)
+4. ✨ **Deploy no Vercel**: Processo automático e gratuito
 5. Adicione seus projetos e habilidades
 
 ## 📞 Suporte
 
 Para dúvidas ou problemas, abra uma issue no repositório.
+
+## 📝 Changelog
+
+### v1.0.2 (25 de fevereiro de 2026) - Otimização para Vercel
+- 🚀 Adicionado `vercel.json` com configuração automática de deploy
+- 🧹 Removidos arquivos desnecessários do portfólio antigo
+- 📝 Criado `.gitignore` na raiz do projeto
+- 📚 Atualizado README com instruções de deploy no Vercel
+- 🎯 Projeto otimizado para deploy em produção
+
+### v1.0.1 (25 de fevereiro de 2026)
+- ✨ Adicionado ícone customizado "J" para a marca pessoal
+- 🔧 Corrigidas opções de TypeScript em `tsconfig.node.json`
+- 🎨 Atualizado favicon do projeto
 
 ---
 
