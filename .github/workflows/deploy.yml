@@ -39,6 +39,11 @@ jobs:
           cd frontend
           npm run build
 
+      - name: List build output
+        run: |
+          echo "Listing frontend/dist contents:"
+          ls -la frontend/dist
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
