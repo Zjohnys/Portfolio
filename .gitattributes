@@ -1,0 +1,30 @@
+* text=auto
+
+# Frontend
+*.tsx text eol=lf
+*.ts text eol=lf
+*.jsx text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.txt text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# Archive files
+*.zip binary
+*.tar binary
+*.gz binary
