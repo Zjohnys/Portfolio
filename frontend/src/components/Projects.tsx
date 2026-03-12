@@ -1,9 +1,27 @@
 import { motion } from 'framer-motion'
+import { useEffect, useMemo, useState } from 'react'
 import { FiGithub, FiExternalLink, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { useState } from 'react'
 
 export default function Projects() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const getProjectsPerViewport = () => {
+    if (typeof window === 'undefined') {
+      return 1
+    }
+
+    if (window.innerWidth >= 1024) {
+      return 3
+    }
+
+    if (window.innerWidth >= 768) {
+      return 2
+    }
+
+    return 1
+  }
+
+  const [currentPage, setCurrentPage] = useState(0)
+  const [projectsPerView, setProjectsPerView] = useState(getProjectsPerViewport)
+
   const projects = [
     {
       id: 1,
@@ -24,7 +42,25 @@ export default function Projects() {
       live: '#',
     },
     {
+      id: 3,
+      title: 'NovaStore - E-Commerce Full-Stack',
+      description: 'Projeto completo de e-commerce com autenticação, catálogo, carrinho, checkout e painel de pedidos.',
+      tags: ['Next.js', 'TypeScript', 'Prisma', 'Auth.js'],
+      image: '🛒',
+      github: 'https://github.com/Zjohnys/e-commerce-nextjs',
+      live: '#',
+    },
+    {
       id: 4,
+      title: 'Factory Optimizer',
+      description: 'Aplicação para gerenciamento de insumos e otimização de produção industrial com sugestão de produção ótima.',
+      tags: ['Java', 'Spring Boot', 'Vue 3', 'H2'],
+      image: '🏭',
+      github: 'https://github.com/Zjohnys/factory-optimizer',
+      live: '#',
+    },
+    {
+      id: 5,
       title: 'Portfólio Pessoal',
       description: 'Site portfólio responsivo desenvolvido com HTML, CSS e JavaScript para apresentação profissional.',
       tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
@@ -34,42 +70,40 @@ export default function Projects() {
     },
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  }
-
-  const projectsPerView = 3
-  const canGoNext = currentIndex + projectsPerView < projects.length
-  const canGoPrev = currentIndex > 0
-
-  const handleNext = () => {
-    if (canGoNext) {
-      setCurrentIndex(currentIndex + 1)
+  useEffect(() => {
+    const handleResize = () => {
+      setProjectsPerView(getProjectsPerViewport())
     }
-  }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  const totalPages = useMemo(() => {
+    return Math.max(1, Math.ceil(projects.length / projectsPerView))
+  }, [projects.length, projectsPerView])
+
+  useEffect(() => {
+    setCurrentPage((prevPage) => Math.min(prevPage, totalPages - 1))
+  }, [totalPages])
+
+  const startIndex = currentPage * projectsPerView
+  const visibleProjects = projects.slice(startIndex, startIndex + projectsPerView)
+
+  const canGoPrev = currentPage > 0
+  const canGoNext = currentPage < totalPages - 1
 
   const handlePrev = () => {
-    if (canGoPrev) {
-      setCurrentIndex(currentIndex - 1)
-    }
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0))
   }
 
-  const visibleProjects = projects.slice(currentIndex, currentIndex + projectsPerView)
+  const handleNext = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1))
+  }
 
   return (
     <section id="projetos" className="py-20 px-4 bg-slate-950 relative overflow-hidden">
@@ -85,17 +119,20 @@ export default function Projects() {
 
         <div className="relative">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            key={`${currentPage}-${projectsPerView}`}
+            className="grid gap-6"
+            style={{ gridTemplateColumns: `repeat(${projectsPerView}, minmax(0, 1fr))` }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
           >
-            {visibleProjects.map((project) => (
+            {visibleProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 className="group bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300"
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: index * 0.06 }}
                 whileHover={{ y: -10 }}
               >
                 {/* Project Image */}
@@ -144,35 +181,52 @@ export default function Projects() {
             ))}
           </motion.div>
 
-          {/* Navigation Arrows */}
-          {(canGoPrev || canGoNext) && (
-            <div className="flex justify-center gap-4 mt-8">
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-8">
               <motion.button
+                type="button"
                 onClick={handlePrev}
                 disabled={!canGoPrev}
                 className={`p-2 rounded-full border transition-all ${
                   canGoPrev
                     ? 'border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400'
-                    : 'border-gray-600 text-gray-600 cursor-not-allowed'
+                    : 'border-gray-700 text-gray-600 cursor-not-allowed'
                 }`}
-                whileHover={canGoPrev ? { scale: 1.1 } : {}}
+                whileHover={canGoPrev ? { scale: 1.08 } : {}}
                 whileTap={canGoPrev ? { scale: 0.95 } : {}}
+                aria-label="Página anterior"
               >
-                <FiChevronLeft size={20} />
+                <FiChevronLeft size={18} />
               </motion.button>
 
+              <div className="flex items-center gap-2">
+                {Array.from({ length: totalPages }).map((_, pageIndex) => (
+                  <button
+                    key={pageIndex}
+                    type="button"
+                    onClick={() => setCurrentPage(pageIndex)}
+                    className={`h-2.5 w-2.5 rounded-full transition-all ${
+                      pageIndex === currentPage ? 'bg-cyan-400 w-6' : 'bg-slate-600 hover:bg-slate-500'
+                    }`}
+                    aria-label={`Ir para página ${pageIndex + 1}`}
+                  />
+                ))}
+              </div>
+
               <motion.button
+                type="button"
                 onClick={handleNext}
                 disabled={!canGoNext}
                 className={`p-2 rounded-full border transition-all ${
                   canGoNext
                     ? 'border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400'
-                    : 'border-gray-600 text-gray-600 cursor-not-allowed'
+                    : 'border-gray-700 text-gray-600 cursor-not-allowed'
                 }`}
-                whileHover={canGoNext ? { scale: 1.1 } : {}}
+                whileHover={canGoNext ? { scale: 1.08 } : {}}
                 whileTap={canGoNext ? { scale: 0.95 } : {}}
+                aria-label="Próxima página"
               >
-                <FiChevronRight size={20} />
+                <FiChevronRight size={18} />
               </motion.button>
             </div>
           )}
