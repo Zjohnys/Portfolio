@@ -1,7 +1,6 @@
 import express, { Express, Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import nodemailer from 'nodemailer'
 
 dotenv.config()
 
@@ -22,14 +21,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next()
 })
 
-// Email transporter configuration
-const transporter = nodemailer.createTransport({
-  service: process.env.EMAIL_SERVICE || 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-})
 
 // Routes
 app.get('/', (req: Request, res: Response) => {
@@ -37,7 +28,7 @@ app.get('/', (req: Request, res: Response) => {
 })
 
 // Contact form endpoint
-app.post('/contact', async (req: Request, res: Response) => {
+const handleContact = async (req: Request, res: Response) => {
   try {
     const { name, email, subject, message } = req.body
 
@@ -50,40 +41,17 @@ app.post('/contact', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Email inválido' })
     }
 
-    // Send email
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      replyTo: email,
-      subject: `Novo contato: ${subject}`,
-      html: `
-        <h2>Novo Contato do Portfólio</h2>
-        <p><strong>Nome:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Assunto:</strong> ${subject}</p>
-        <p><strong>Mensagem:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
-    })
-
-    // Send confirmation email
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: 'Confirmação de recebimento - Portfólio',
-      html: `
-        <h2>Obrigado pelo contato!</h2>
-        <p>Recebemos sua mensagem com sucesso.</p>
-        <p>Entraremos em contato em breve.</p>
-      `,
-    })
-
-    res.json({ message: 'Mensagem enviada com sucesso!' })
+    console.log('Nova mensagem de contato recebida:')
+    console.log({ name, email, subject, message })
+    res.status(202).json({ message: 'Mensagem recebida com sucesso!' })
   } catch (error) {
-    console.error('Erro ao enviar email:', error)
-    res.status(500).json({ error: 'Erro ao enviar mensagem' })
+    console.error('Erro ao processar contato:', error)
+    res.status(500).json({ error: 'Erro ao processar mensagem' })
   }
-})
+}
+
+app.post('/contact', handleContact)
+app.post('/api/contact', handleContact)
 
 // Projects endpoint
 app.get('/projects', (req: Request, res: Response) => {

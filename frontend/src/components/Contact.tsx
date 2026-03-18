@@ -29,11 +29,13 @@ export default function Contact() {
       })
 
       if (response.ok) {
-        setSubmitMessage('Mensagem enviada com sucesso!')
+        const data = await response.json()
+        setSubmitMessage(data.message || 'Mensagem enviada com sucesso!')
         setFormData({ name: '', email: '', subject: '', message: '' })
         setTimeout(() => setSubmitMessage(''), 5000)
       } else {
-        setSubmitMessage('Erro ao enviar mensagem. Tente novamente.')
+        const data = await response.json().catch(() => null)
+        setSubmitMessage(data?.error || 'Erro ao enviar mensagem. Tente novamente.')
       }
     } catch (error) {
       setSubmitMessage('Erro de conexão. Por favor, tente novamente.')
