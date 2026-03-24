@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useMemo, useState } from 'react'
 import { FiGithub, FiExternalLink, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+import { PORTFOLIO_PROJECTS } from '../data/portfolioData'
 
 export default function Projects() {
   const getProjectsPerViewport = () => {
@@ -22,62 +23,7 @@ export default function Projects() {
   const [currentPage, setCurrentPage] = useState(0)
   const [projectsPerView, setProjectsPerView] = useState(getProjectsPerViewport)
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Login React - Sistema de Autenticação',
-      description: 'Um aplicativo de autenticação completo com frontend em React e backend em Node.js com TypeScript.',
-      tags: ['React', 'Node.js', 'TypeScript', 'Authentication'],
-      image: '🔐',
-      github: 'https://github.com/Zjohnys/Login-React',
-      live: '#',
-    },
-    {
-      id: 2,
-      title: 'Nature Atypical Page',
-      description: 'Site criado para um projeto de inclusão na escola, promovendo acessibilidade e conscientização.',
-      tags: ['JavaScript', 'HTML', 'CSS', 'Accessibility'],
-      image: '🌿',
-      github: 'https://github.com/Zjohnys/Nature_Atypical_Page',
-      live: '#',
-    },
-    {
-      id: 3,
-      title: 'NovaStore - E-Commerce Full-Stack',
-      description: 'Projeto completo de e-commerce com autenticação, catálogo, carrinho, checkout e painel de pedidos.',
-      tags: ['Next.js', 'TypeScript', 'Prisma', 'Auth.js'],
-      image: '🛒',
-      github: 'https://github.com/Zjohnys/e-commerce-nextjs',
-      live: '#',
-    },
-    {
-      id: 4,
-      title: 'Factory Optimizer',
-      description: 'Aplicação para gerenciamento de insumos e otimização de produção industrial com sugestão de produção ótima.',
-      tags: ['Java', 'Spring Boot', 'Vue 3', 'H2'],
-      image: '🏭',
-      github: 'https://github.com/Zjohnys/factory-optimizer',
-      live: '#',
-    },
-    {
-      id: 5,
-      title: 'Portfólio Pessoal',
-      description: 'Site portfólio responsivo desenvolvido com HTML, CSS e JavaScript para apresentação profissional.',
-      tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
-      image: '💼',
-      github: 'https://github.com/Zjohnys/Portfolio',
-      live: 'https://zjohnys.github.io/Portfolio/',
-    },
-    {
-      id: 6,
-      title: 'NexaStock Landing Page',
-      description: 'Landing page moderna com React e TypeScript, navegação por rotas e tema claro/escuro com persistência.',
-      tags: ['React', 'TypeScript', 'Vite', 'React Router', 'Framer Motion'],
-      image: '📈',
-      github: 'https://github.com/Zjohnys/Landing-page-main',
-      live: '#',
-    },
-  ]
+  const projects = PORTFOLIO_PROJECTS
 
   useEffect(() => {
     const handleResize = () => {

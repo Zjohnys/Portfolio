@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion'
 import { FiArrowRight, FiDownload } from 'react-icons/fi'
+import { getPortfolioStats } from '../data/portfolioData'
 
 export default function Hero() {
+  const stats = getPortfolioStats()
+  const yearsOfExperience = 2
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -95,9 +99,9 @@ export default function Hero() {
           variants={itemVariants}
         >
           {[
-            { number: '12+', label: 'Repositórios' },
-            { number: '15+', label: 'Tecnologias' },
-            { number: '6+', label: 'Projetos' },
+            { number: `${yearsOfExperience}+`, label: 'Anos de Experiência' },
+            { number: `${stats.technologyCount}+`, label: 'Tecnologias' },
+            { number: `${stats.projectCount}+`, label: 'Projetos' },
           ].map((stat, index) => (
             <motion.div
               key={index}
