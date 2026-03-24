@@ -4,15 +4,15 @@ export default function Skills() {
   const skillCategories = [
     {
       category: 'Frontend',
-      skills: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Next.js', 'Vite'],
+      skills: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Next.js', 'Vite', 'Vue 3', 'React Router'],
     },
     {
       category: 'Backend',
-      skills: ['Node.js', 'Express', 'Python', 'API REST', 'Authentication', 'PostgreSQL', 'MongoDB'],
+      skills: ['Node.js', 'Express', 'API REST', 'Authentication', 'Java', 'Spring Boot', 'Prisma', 'Auth.js', 'H2'],
     },
     {
-      category: 'Soft Skills',
-      skills: ['Trabalho em Equipe', 'Resolução de Problemas', 'Comunicação', 'Adaptabilidade', 'Aprendizado Rápido', 'Criatividade'],
+      category: 'Ferramentas e Boas Práticas',
+      skills: ['Git & GitHub', 'Responsive Design', 'Acessibilidade', 'Framer Motion', 'Integração Frontend/Backend', 'Arquitetura Full-Stack'],
     },
   ]
 
@@ -93,10 +93,10 @@ export default function Skills() {
         >
           <h3 className="text-2xl font-bold mb-8 text-center">Proficiência</h3>
           {[
-            { lang: 'React/TypeScript', level: 45 },
-            { lang: 'JavaScript/HTML/CSS', level: 85 },
-            { lang: 'Node.js/Backend', level: 40 },
-            { lang: 'Next.js', level: 20 },
+            { lang: 'JavaScript/HTML/CSS', level: 88 },
+            { lang: 'React/TypeScript', level: 74 },
+            { lang: 'Node.js e APIs', level: 65 },
+            { lang: 'Java/Spring Boot', level: 57 },
           ].map((item, index) => (
             <div key={index} className="mb-6">
               <div className="flex justify-between items-center mb-2">

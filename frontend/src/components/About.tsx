@@ -66,15 +66,16 @@ export default function About() {
 
             <motion.div className="space-y-4 text-gray-300" variants={itemVariants}>
               <p className="text-base md:text-lg leading-relaxed">
-                Sou Tecnólogo em Análise e Desenvolvimento de Sistemas, apaixonado por criar 
-                soluções web. Desenvolvo projetos com React, TypeScript e 
-                Node.js, sempre buscando entregar código limpo e eficiente.
+              Sou um Desenvolvedor de Software Full-Stack
+              focado em transformar problemas complexos em soluções digitais
+              que conectam performance e inteligência. Graduado em Análise e Desenvolvimento de Sistemas
+              pelo Centro Universitário Paraíso.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed">
-                Minha especialidade é transformar ideias em produtos digitais funcionais e visualmente
-                atraentes. Trabalho com desenvolvimento full stack, aplicando conceitos de Programação Orientada a Objetos, design responsivo
-                e boas práticas de codificação.
+                Hoje, meu diferencial reside na convergência entre o desenvolvimento web tradicional e a Inteligência Artificial.
+                Com experiência em React, Node.js, JavaScript (ES6+), TypeScript e PHP, foco na criação de interfaces responsivas e APIs robustas,
+                sempre aplicando princípios de Clean Code e Programação Orientada a Objetos (POO).
               </p>
 
               <p className="text-base md:text-lg leading-relaxed">

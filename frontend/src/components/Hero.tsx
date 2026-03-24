@@ -58,9 +58,9 @@ export default function Hero() {
           className="text-xl md:text-2xl text-gray-300 mb-8 font-light"
           variants={itemVariants}
         >
-          Full Stack Developer | Transformando ideias em experiências digitais incríveis
+          Full-Stack Software Developer | Interfaces com IA & Soluções Web Eficientes
           <br />
-          React • TypeScript • Node.js • Next.js
+          React • Next.js • Node.js • TypeScript 
         </motion.p>
 
         <motion.div
@@ -78,8 +78,8 @@ export default function Hero() {
           </motion.a>
 
           <motion.a
-            href="/JohnMoreira_CV.pdf"
-            download="JohnMoreira_CV.pdf"
+            href="JohnMoreira_CV.pdf"
+            download="John-Moreira-Curriculo-2026.pdf"
             className="px-8 py-3 border-2 border-cyan-500 text-cyan-400 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-cyan-500/10"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
@@ -95,9 +95,9 @@ export default function Hero() {
           variants={itemVariants}
         >
           {[
-            { number: '11+', label: 'Repositórios' },
-            { number: '4+', label: 'Tecnologias' },
-            { number: '3+', label: 'Projetos' },
+            { number: '12+', label: 'Repositórios' },
+            { number: '15+', label: 'Tecnologias' },
+            { number: '6+', label: 'Projetos' },
           ].map((stat, index) => (
             <motion.div
               key={index}

@@ -68,6 +68,15 @@ export default function Projects() {
       github: 'https://github.com/Zjohnys/Portfolio',
       live: 'https://zjohnys.github.io/Portfolio/',
     },
+    {
+      id: 6,
+      title: 'NexaStock Landing Page',
+      description: 'Landing page moderna com React e TypeScript, navegação por rotas e tema claro/escuro com persistência.',
+      tags: ['React', 'TypeScript', 'Vite', 'React Router', 'Framer Motion'],
+      image: '📈',
+      github: 'https://github.com/Zjohnys/Landing-page-main',
+      live: '#',
+    },
   ]
 
   useEffect(() => {
