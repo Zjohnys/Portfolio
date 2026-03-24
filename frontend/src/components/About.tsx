@@ -66,16 +66,15 @@ export default function About() {
 
             <motion.div className="space-y-4 text-gray-300" variants={itemVariants}>
               <p className="text-base md:text-lg leading-relaxed">
-              Sou um Desenvolvedor de Software Full-Stack
-              focado em transformar problemas complexos em soluções digitais
-              que conectam performance e inteligência. Graduado em Análise e Desenvolvimento de Sistemas
-              pelo Centro Universitário Paraíso.
+              Sou um Desenvolvedor de Software Full-Stack com 2 anos de experiência prática no desenvolvimento de sistemas escaláveis
+              e interfaces de alta performance. Minha atuação é focada no ecossistema JavaScript (React, Next.js e Node.js), 
+              com sólida base em TypeScript e PHP.
+
               </p>
 
               <p className="text-base md:text-lg leading-relaxed">
-                Hoje, meu diferencial reside na convergência entre o desenvolvimento web tradicional e a Inteligência Artificial.
-                Com experiência em React, Node.js, JavaScript (ES6+), TypeScript e PHP, foco na criação de interfaces responsivas e APIs robustas,
-                sempre aplicando princípios de Clean Code e Programação Orientada a Objetos (POO).
+                Meu diferencial reside na convergência entre o desenvolvimento web tradicional e a Inteligência Artificial, 
+                aplicando princípios de Clean Code e POO para entregar soluções que conectam performance e inteligência.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed">
